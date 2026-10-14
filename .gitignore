@@ -1,3 +1,4 @@
 *.elf
 notebook/fw/
-notebook/flash_highZ.ipynbnotebook/raph.ipynb
+notebook/flash_highZ.ipynb
+notebook/raph.ipynb

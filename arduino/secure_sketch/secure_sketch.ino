@@ -21,6 +21,7 @@ const uint8_t MY_TX_PIN = 11;
 SoftwareSerial comms(MY_RX_PIN, MY_TX_PIN); // RX, TX
 
 void setup() {
+  pinMode(A0, INPUT);
   Serial.begin(115200);
   while (!Serial) { delay(10); }
   Serial.println();
@@ -62,6 +63,10 @@ String readLine(Stream &s) {
 bool early_exit_compare(const char *attempt) {
   size_t pass_len = sizeof(PASSWORD) - 1; // exclude terminating NUL
   for (size_t i = 0; i < pass_len; ++i) {
+    int analogReadResult = analogRead(A0);
+    for(int j = 0; j < analogReadResult; j++) {
+      3.14145225 * ((float) analogRead(A0)) / 2;
+    }
     /*Serial.print("Character from password: '");
     Serial.print(PASSWORD[i]);
     Serial.print("', attempt: '");/home/dlh/ECAM/Cours/5MEO Embedded Security/Course/00/ES5T_00/resource/ES5_CM0_code_naif.ino
